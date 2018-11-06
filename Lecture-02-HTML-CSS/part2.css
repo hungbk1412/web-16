@@ -13,3 +13,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.menu-vertical span:hover {
+    background-color: #9CD08F;
+    color: #ffffff;
+    cursor: pointer;
+}
