@@ -1,0 +1,15 @@
+.menu-vertical {
+    display: grid;
+    grid-gap: 1px;
+}
+
+.menu-vertical span {
+    width: 100px;
+    height: 30px;
+    background-color: #D5B0AC;
+    color: #402E2A;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
