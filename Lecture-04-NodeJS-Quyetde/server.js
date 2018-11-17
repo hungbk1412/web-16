@@ -10,12 +10,12 @@ app.use(express.static("view"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/randomquestion', (req, res) =>{
-    res.send((questions[Math.floor(Math.random()*questions.length)]).content); 
+    res.send((questions[Math.floor(Math.random()*questions.length)])); 
 })
 
 app.get('/question/:questionid', (req, res) => {
     const { questionid } = req.params;
-    res.send(questions[questionid].content);
+    res.send(questions[questionid]);
 })
 
 app.get('/ask', (req, res) => {
