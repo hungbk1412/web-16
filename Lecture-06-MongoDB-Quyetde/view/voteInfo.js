@@ -17,8 +17,8 @@ $.ajax({
             $("#voteNo").text("").css('width', '0%');
             $("#voteYes").text("100%").css('width','100%');
         } else{
-            $("#voteYes").text((data.question.yes*100/totalVote).toFixed(2) + "%").css('width', data.question.yes*100/totalVote+'%');
-            $("#voteNo").text((data.question.no*100/totalVote).toFixed(2) + "%").css('width', data.question.no*100/totalVote+'%');
+            $("#voteYes").text((data.question.yes*100/totalVote).toFixed(2) + "% Có/Đúng/Phải").css('width', data.question.yes*100/totalVote+'%');
+            $("#voteNo").text((data.question.no*100/totalVote).toFixed(2) + "% Không/Sai/Trái").css('width', data.question.no*100/totalVote+'%');
         }
     },
     error: function(err) {
