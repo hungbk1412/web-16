@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const mongoose = require("mongoose");
@@ -19,9 +20,19 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/view/home.html");
 })
 
-app.post("/answer", (req, res) => {
-    
-})
+app.post("/answer",(req,res) => {
+    const questionId = req.body.questionId;
+    const vote = req.body.vote;
+    questionModel.findByIdAndUpdate(
+        questionId, 
+        { $inc : { [vote] : 1 } }, 
+        {new: true},
+        (err,questions) => {
+            if (err) console.log(err)
+            else console.log("update data success!");
+            res.send({questions})
+        });
+});
 
 app.get('/randomquestion', (req, res) =>{    
     questionModel.count( {}, (err, count) => {
@@ -36,12 +47,16 @@ app.get('/randomquestion', (req, res) =>{
     })
 })
 
-app.get('/question/:questionID', (req, res) => {
-    questionModel.findById(req.params.questionID,(err, question) => {
-        if (err) console.log(err)
-        else res.json( {question: question })
+app.get("/question/:questionId", (req,res) => {
+    res.sendFile(__dirname + "/view/voteInfo.html")
+});
+
+app.post("/question/:questionId", (req,res) => {
+    const questionId = req.body.questionId;
+    questionModel.findById(questionId,(err,question) => {
+        res.send({question});
     })
-})
+});
 
 app.get('/ask', (req, res) => {
     res.sendFile(__dirname + "/view/ask.html");

@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hỏi nhanh</title>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../voteInfo.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Quyết đê!</a>
@@ -30,21 +29,15 @@
             </ul>
         </div>
     </nav>
-
-    <form action="/ask" method="post">
-        <h3>Hãy hỏi cộng đồng một câu hỏi đúng/sai có/không</h3>
-        <textarea name="question" id="textInput" cols="100" rows="5" maxlength="200"></textarea>
-        <p id="remain">Còn /200 ký tự</p>
-        <button class="btn btn-info" type="submit">Gửi</button>
-    </form>
-    
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-    </script>
-
-    <script src="./ask.js"></script>
-    
+    <h1 id="question" class="mt-5 mb-5">Question</h1>
+    <div class="container" id="questionInfo">
+        <div id="vote">Vote:</div>
+        <span id="voteYes">Vote Yes:</span>
+        <span id="voteNo">Vote No:</span>
+    </div>
+    <div class="container mt-5" id="else">
+        <button class="btn btn-success">Câu hỏi khác</button>
+    </div>
+    <script src="../voteInfo.js"></script>
 </body>
 </html>

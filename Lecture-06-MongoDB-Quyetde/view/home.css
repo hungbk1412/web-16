@@ -1,0 +1,14 @@
+#question{
+    text-align: center;
+}
+#result-else{
+    top:3px;
+    text-align: center;
+}
+#yes{
+    left: 10%;
+}
+#no{
+    position: absolute;
+    right: 10%;
+}
