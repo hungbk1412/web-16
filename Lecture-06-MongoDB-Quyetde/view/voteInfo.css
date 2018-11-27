@@ -10,12 +10,12 @@
 }
 #voteYes{
     padding: 7px 0;
-    background: #d9534f;
+    background: #337ab7;
     position: absolute;
     text-align: center;
 }
 #voteNo{
-    background: #337ab7;
+    background:  #d9534f;
     padding: 7px 0;
     position: absolute;
     text-align: center;
