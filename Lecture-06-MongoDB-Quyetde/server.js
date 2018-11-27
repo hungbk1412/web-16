@@ -27,12 +27,12 @@ app.post("/answer",(req,res) => {
         questionId, 
         { $inc : { [vote] : 1 } }, 
         {new: true},
-        (err,questions) => {
+        (err,question) => {
             if (err) console.log(err)
             else console.log("update data success!");
-            res.send({questions})
-        });
-});
+            res.send({question})
+        })
+})
 
 app.get('/randomquestion', (req, res) =>{    
     questionModel.count( {}, (err, count) => {

@@ -14,13 +14,13 @@ $.ajax({
 $("#no, #yes").on('click',function(){
     $.ajax({
         url:"/answer",
-        type:"post",
+        type:"POST",
         result: {
             questionId: $("#question").attr("result-question"),
             vote:$(this).attr("id")
         },
         success: function(result) {
-            window.location.href = "/question/"+result.questions._id; 
+            window.location.href = "/question/" + $("#question").attr("result-question"); 
         },
         error: function(err) {
             console.log(err);
