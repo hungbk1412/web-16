@@ -15,7 +15,7 @@ $("#no, #yes").on('click',function(){
     $.ajax({
         url:"/answer",
         type:"POST",
-        result: {
+        data: {
             questionId: $("#question").attr("result-question"),
             vote:$(this).attr("id")
         },
